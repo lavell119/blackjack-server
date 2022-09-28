@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lavell119/blackjack-server/issues"
   },
-  "homepage": "https://github.com/lavell119/blackjack-server#readme"
+  "homepage": "https://github.com/lavell119/blackjack-server#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
