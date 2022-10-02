@@ -301,7 +301,15 @@ body {
     width: 470px;
     border-radius: 13px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    position: relative;
+}
+
+form h2 {
+    position: absolute;
+    top: 25px;
+    justify-self: center;
+    color: white;
 }
 
 .create-account-popup {

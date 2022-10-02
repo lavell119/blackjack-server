@@ -2,6 +2,14 @@ const express=require('express')
 
 const app=express()
 
+class User {
+    constructor(nickname, password, email){
+        this.nickname=nickname;
+        this.password=password;
+        this.email=email;
+    }
+}
+
 //register user engine
 app.set('view engine', 'ejs')
 
@@ -31,4 +39,8 @@ app.get('/create-account', (req, res)=>{
 
 app.post('/create-account', (req, res)=>{
     console.log(req.body)
-})
+    let creds=req.body
+     let newUser=new User(creds.nickname, creds.passwordinput, creds.emailinput)
+     console.log(newUser)
+
+})  
