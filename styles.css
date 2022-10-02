@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(39, 39, 39);
+    height: 100vh;
+}
+
+.table-grid {
+    height: 500px;
+    width: 500px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.seat {
+    border: 2px solid grey;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.seat.active {
+    border: 2px solid blue;
+    transition: .5s;
+}
+
+.hand {
+    display: flex;
+}
+
+.player {
+    height: 151px;
+    width: 151px;
+    background-color: black;
+    border-radius: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.player-name {
+    position: absolute;
+    color: white;
+    top: 15px;   
+}
+
+.chip-count {
+    position: absolute;
+    color: gold;
+    bottom: 15px; 
+   
+}
+
+.card {
+    height: 100px;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 3px;
+    width: 60px;
+    height: 85px;
+    margin: -24px;
+    background-size: contain;
+}
+
+.test-button {
+    position: absolute;
+    height:50px;
+    width: 50px;
+    background: red;
+}
+
+
+.btn-container {
+    position: absolute;
+    padding:10px;
+    bottom: 0px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.btn-container {
+    display: flex;
+    transition: 1s;
+}
+
+.hit-btn {
+    background: rgb(40, 156, 40);
+    transition: 2s;
+
+}
+
+.stay-btn {
+    background: red;
+}
+
+.game-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.score {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 5px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: 900;
+    color: white;
+}
+
+.winner {
+    position: absolute;
+    height: 30px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    color: white;
+ 
+}
+
+.win {
+    border: 2px solid green;
+}
+
+
+
+.bust {
+    border: 1px solid red;
+}
+
+.red {
+    color: red;
+}
+
+.bust-ele {
+    position: absolute;
+    padding: 4px;
+    border: 2px solid red;
+    color: black;
+    font-weight: bold;
+    background: red;
+    opacity: .2;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.bust-text {
+    position: absolute;
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 10px;
+    background: black;
+    padding: 5px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-again {
+    position: absolute;
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+.chip-deduction {
+    position: absolute;
+    color: red;
+    bottom: 16px; 
+    right: 57px;
+    font-weight: bold;
+    opacity: .8;
+    font-size: 14px;
+}
+
+
+
+.chip-addition {
+    position: absolute;
+    color: green;
+    bottom: 15px; 
+    right: 47px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    position: relative;
+}
+
+#login input {
+    height: 29px;
+    padding-left: 8px;
+}
+
+#logo {
+    width: 190px;
+    height: auto;
+    position: absolute;
+    top: 30px;
+}
+
+.login-btns {
+    position: absolute;
+    bottom: 22px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.login-btns button {
+    border: 1px solid white;
+    height: 100%;
+    width: 120px;
+    padding: 0;
+    background: white;
+    cursor: pointer;
+    color: white;
+}
+
+#login-btn {
+    background: blue;
+}
+
+.create-account-btn {
+    background: green;
+    border: 1px solid white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 20px;  
+    cursor: pointer;
+}
+
+
+
+.create-account-form {
+    display: flex;
+    background-color: rgb(71, 71, 71);
+    height: 380px;
+    width: 470px;
+    border-radius: 13px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.create-account-popup {
+    position: absolute;
+    z-index: 11;
+
+}
+
+.table-row {
+    color: white;
+    height: 30px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.create-account-form-labels {
+    width: 50%;
+    height: 160px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.input-fields {
+    height: 160px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.input-fields input {
+    width: 100%;
+    height: 30px;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+.create-account-popup-title {
+    color: white;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    top: 30px;
+    font-size: 22px;
+}
+
+.create-account-popup-submit-button-row {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    padding: 0;
+  
+    cursor: pointer;
+    color: white;
+    bottom: 25px;
+    margin: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+}
+
+.popup-button {
+    background: rgb(104, 104, 104);
+    height: 30px;
+    width: 90px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-incorrect {
+    position: absolute;
+    height: 40px;
+    width: 200px;
+    color: rgb(236, 27, 27);
+    top: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+}
+
+.hide {
+    display: none;
+}
