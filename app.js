@@ -8,14 +8,13 @@ app.set('view engine', 'ejs')
 app.listen(3000, ()=>console.log('express app listening on port 3000'))
 
 app.get('/', (req, res)=>{
-    res.render('index')
-    console.log('hello')
+    res.render('login')
 })
 
-app.get('/about', (req, res)=>{
-    res.render('about', { test: 'test'})
+app.get('/lobby', (req, res)=>{
+    res.render('lobby')
 })
 
-app.use('/', (req, res)=>{
-    res.render('404')
+app.get('/account', (req, res)=>{
+    res.render('account')
 })
