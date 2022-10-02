@@ -10,9 +10,7 @@
 </head>
 <body>  
 </body>
-<div class="create-account-popup hide">
-    <div class="create-account-popup-title">Create Account</div>
-    <form class="create-account-form" action="/login" method="POST">   
+    <form class="create-account-form" action="/create-account" method="POST">   
         <div class="create-account-form-labels">
             <div class="table-row">
                 <text>* Nickname:</text>
@@ -49,25 +47,6 @@
             <div class="popup-button popup-cancel-button">CANCEL</div>
         </div> 
         
-    </form>
-</div>
-<img id="logo" src="blackjack-logo.png">
-    <div class="password-incorrect hide">
-        Incorrect Username or Password
-    </div>
-    <form id="login">
-        <label>Username</label>
-        <input class="username-login">
-        <label>Password</label>
-        <input class="password-login">
-        <div class="login-btns">
-            <button id="login-btn">
-                LOGIN
-            </button>
-            <div class="create-account-btn">
-                CREATE ACCOUNT
-            </div>
-        </div>
     </form>
 </body>
 </html>
