@@ -1,7 +1,14 @@
-const express=require('express')
+const express = require('express')
 const mongoose = require('mongoose')
 
+const dbURI='mongodb+srv://Lavell119:synxz119@cluster0.19jswsh.mongodb.net/blackjack-db?retryWrites=true&w=majority'
+mongoose.connect(dbURI)
+.then((result)=>console.log('connected to db'))
+.catch((err)=>console.log(err))
+
+
 const app=express()
+
 
 class User {
     constructor(nickname, password, email){
