@@ -1,4 +1,5 @@
 const express=require('express')
+const mongoose = require('mongoose')
 
 const app=express()
 
@@ -14,7 +15,7 @@ class User {
 app.set('view engine', 'ejs')
 
 
-app.listen(3000, ()=>console.log('express app listening on port 3000'))
+app.listen(3000, ()=>console.log('blackjack server listening on port 3000'))
 
 //middleware
 app.use(express.static('public'))
@@ -38,9 +39,7 @@ app.get('/create-account', (req, res)=>{
 })
 
 app.post('/create-account', (req, res)=>{
-    console.log(req.body)
     let creds=req.body
-     let newUser=new User(creds.nickname, creds.passwordinput, creds.emailinput)
-     console.log(newUser)
-
+    let newUser=new User(creds.nickname, creds.passwordinput, creds.emailinput)
+    console.log(newUser)
 })  
