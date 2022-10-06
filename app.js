@@ -23,6 +23,10 @@ app.use(express.urlencoded( { extended: true }))
 
 //routes
 app.get('/', (req, res)=>{
+    res.redirect('login')
+})
+
+app.get('/login', (req, res)=>{
     res.render('login')
 })
 
@@ -40,8 +44,6 @@ app.get('/create-account', (req, res)=>{
 
 app.post('/create-account', (req, res)=>{
     const creds=req.body
-    console.log(creds)
-    console.log(creds.nickname)
     let newUser=new User({
         nickname: creds.nickname,
         password: creds.passwordinput,
@@ -52,3 +54,13 @@ app.post('/create-account', (req, res)=>{
         console.log(res)
     })
 })  
+
+app.post('/login', (req, res)=>{
+    User.find()
+        .then((result)=>{
+            
+            console.log(result)
+            res.send(result)
+        })
+        .catch((err)=>console.log(err))
+})
