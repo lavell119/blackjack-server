@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const User= require('./models/user.js')
 
 const dbURI='mongodb+srv://Lavell119:synxz119@cluster0.19jswsh.mongodb.net/blackjack-db?retryWrites=true&w=majority'
 mongoose.connect(dbURI)
@@ -9,14 +10,6 @@ mongoose.connect(dbURI)
 
 const app=express()
 
-
-class User {
-    constructor(nickname, password, email){
-        this.nickname=nickname;
-        this.password=password;
-        this.email=email;
-    }
-}
 
 //register user engine
 app.set('view engine', 'ejs')
@@ -46,7 +39,16 @@ app.get('/create-account', (req, res)=>{
 })
 
 app.post('/create-account', (req, res)=>{
-    let creds=req.body
-    let newUser=new User(creds.nickname, creds.passwordinput, creds.emailinput)
-    console.log(newUser)
+    const creds=req.body
+    console.log(creds)
+    console.log(creds.nickname)
+    let newUser=new User({
+        nickname: creds.nickname,
+        password: creds.passwordinput,
+        email: creds.emailinput
+    }) 
+    newUser.save()
+    .then((res)=>{
+        console.log(res)
+    })
 })  
