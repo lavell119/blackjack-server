@@ -7,6 +7,9 @@ mongoose.connect(dbURI)
 .then((result)=>console.log('connected to db'))
 .catch((err)=>console.log(err))
 
+let userLogin=()=>{
+    console.log('user logged in')
+}
 
 const app=express()
 
@@ -56,11 +59,20 @@ app.post('/create-account', (req, res)=>{
 })  
 
 app.post('/login', (req, res)=>{
+    console.log(req.body)
+    let username=req.body.usernamelogin
+    let password=req.body.passwordlogin
+    console.log (username)
     User.find()
         .then((result)=>{
-            
-            console.log(result)
-            res.send(result)
+            for (x=0; x<result.length; x++) {
+                let users=result
+                if (username===users[x].nickname &&password===users[x].password){
+                    userLogin()
+                } else {
+                    passwordIncorrect.classList.remove('hide')       
+                }
+            }
         })
         .catch((err)=>console.log(err))
 })
