@@ -282,8 +282,14 @@ body {
     background: blue;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 .create-account-btn {
     background: green;
+    height: 100%;
     border: 1px solid white;
     font-size: 14px;
     display: flex;
