@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const User= require('./models/user.js')
+let username
 
 const dbURI='mongodb+srv://Lavell119:synxz119@cluster0.19jswsh.mongodb.net/blackjack-db?retryWrites=true&w=majority'
 mongoose.connect(dbURI)
@@ -34,7 +35,7 @@ app.get('/login', (req, res)=>{
 })
 
 app.get('/lobby', (req, res)=>{
-    res.render('lobby')
+    res.render('lobby', {usernametest: username})
 })
 
 app.get('/account', (req, res)=>{
@@ -60,15 +61,17 @@ app.post('/create-account', (req, res)=>{
 
 app.post('/login', (req, res)=>{
     console.log(req.body)
-    let username=req.body.usernamelogin
+    username=req.body.usernamelogin
     let password=req.body.passwordlogin
-    console.log (username)
+    console.log (`username=${username}`)
     User.find()
         .then((result)=>{
             for (x=0; x<result.length; x++) {
                 let users=result
                 if (username===users[x].nickname &&password===users[x].password){
+                    
                     userLogin()
+                    res.redirect('/lobby')
                 } else {
                     passwordIncorrect.classList.remove('hide')       
                 }
